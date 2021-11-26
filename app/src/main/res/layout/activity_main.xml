@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_marginTop="40sp"
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="190sp"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/button"
+            android:hint="@string/enter_phone"
+            android:inputType="phone" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="showPhone"
+            android:text="@string/show"
+            tools:ignore="OnClick" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="40sp"
+        android:id="@+id/layout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/layout">
+
+        <TextView
+            android:id="@+id/title_phonelabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phone_number"/>
+        <TextView
+            android:id="@+id/text_phonelabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nothing_entered"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout3"
+        android:layout_marginTop="40sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout2">
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_phonelabel"
+            android:text="@string/alert"
+            android:onClick="onClickShowAlert"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="40sp"
+        android:layout_alignParentLeft="true"
+        android:layout_width="match_parent"
+        android:layout_height="120sp"
+        android:layout_below="@+id/layout3"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_datetime" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_date"
+                android:text="@string/date_button"
+                android:onClick="showDatePickerDialog"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_time"
+                android:layout_alignBottom="@id/button_date"
+                android:layout_toRightOf="@id/button_date"
+                android:text="@string/time_button"
+                android:onClick="showTimePickerDialog"/>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
